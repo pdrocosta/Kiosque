@@ -1,13 +1,8 @@
 from rest_framework import serializers
-from pets.serializers import PetSerializer
 
 
 class GroupSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     scientific_name = serializers.CharField(max_length=20)
     created_at = serializers.DateTimeField(read_only=True)
-    pets: PetSerializer(many=True)
-
-
-class GroupResSerializer(serializers.Serializer):
-    scientific_name = serializers.CharField(max_length=20)
+    
